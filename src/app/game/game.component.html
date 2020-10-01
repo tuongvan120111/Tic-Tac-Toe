@@ -1,0 +1,48 @@
+<div class="containter">
+  <div class="game">
+    <div class="game-message">
+      <div class="direction">
+        <div class="direction-position">
+          <span *ngIf="!isStarted" class="direction-turn">It is {{currentTurn}}'s turn.</span>
+          <span *ngIf="isStarted" class="direction-message">Click start button to play</span>
+
+          <div *ngIf="isMessageShow" class="direction-message">
+            <span>{{playerWon}} won</span>
+          </div>
+        </div>
+
+        <div class="message" *ngIf="isEndStep">
+          <span class="direction-message">No one won</span>
+          <span class="direction-message">Click restart button to start again!</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-field">
+      <div class="button">
+        <button *ngFor="let button of buttonList" [disabled]="button.isDisable"
+          (click)="onSelected(button.numberButton)">{{button.player}}</button>
+      </div>
+
+      <div class="game-field-control">
+        <button *ngIf="isStarted" (click)="onStart()">{{startButton}}</button>
+        <button *ngIf="!isStarted" (click)="onReset()">{{resetButton}}</button>
+      </div>
+    </div>
+
+    <div class="game-result">
+      <span class="title">{{score}}</span>
+      <div class="result-field">
+        <div class="player">
+          <span>{{player1}}</span>
+          <span class="player-score">{{score1}}</span>
+        </div>
+
+        <div class="player">
+          <span>{{player2}}</span>
+          <span class="player-score">{{score2}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,136 @@
+$FontSize: ("small": 18px, "normal": 26px, "large": 32px);
+$light: white;
+
+.containter {
+  margin: auto;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  background-color: rgb(165, 158, 158);
+}
+
+.game {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  &-message {
+    color: white;
+    height: 80px;
+    margin-bottom: 40px;
+
+    .direction {
+      &-position {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &-turn {
+        align-self: center;
+        font-size: map-get($FontSize, "large");
+      }
+
+      &-message {
+        align-self: center;
+        font-size: map-get($FontSize, "normal");
+      }
+    }
+
+    .message {
+      align-self: center;
+      font-size: map-get($FontSize, "normal");
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &-field {
+    display: flex;
+    width: 310px;
+    flex-flow: wrap;
+
+    .button {
+      height: 310px;
+      width: 100%;
+
+      button {
+        height: 100px;
+        width: 100px;
+        cursor: pointer;
+        border: 1px solid;
+        font-size: 90px;
+        border-color: black;
+        background-color: #FFFFFF;
+        box-shadow: 10px 10px 10px #888888;
+        margin: 1px 1px;
+
+        &:hover {
+          background-color: #999999;
+
+          &:disabled {
+            cursor: no-drop;
+            border: 1px solid;
+          }
+        }
+
+        &:disabled {
+          background-color: #BBBBBB;
+        }
+      }
+    }
+
+    &-control {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+      button {
+        width: 100px;
+        height: 40px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &-result {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    color: white;
+
+    .title {
+      font-size: map-get($FontSize, "large");
+      align-self: center;
+    }
+
+    .result-field {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 300px;
+      margin-top: 10px;
+
+      .player {
+        display: flex;
+        flex-direction: column;
+        font-size: map-get($FontSize, "normal");
+
+        &-score {
+          align-self: center;
+          margin-top: 5px;
+          font-size: map-get($FontSize, "normal");
+        }
+      }
+    }
+  }
+}
