@@ -1,4 +1,13 @@
-$FontSize: ("small": 18px, "normal": 26px, "large": 32px);
+$FontSize: ("small": 18px,
+  "normal": 26px,
+  "large": 32px);
+$pixcel: ("5": 5px,
+  "40": 40px,
+  "80": 80px,
+  "100":100px,
+  "300": 300px,
+  "310": 310px,
+  "100%": 100%);
 $light: white;
 
 .containter {
@@ -12,8 +21,8 @@ $light: white;
 }
 
 .game {
-  height: 100%;
-  width: 100%;
+  height: map-get($pixcel, "100%");
+  width: map-get($pixcel, "100%");
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,8 +30,8 @@ $light: white;
 
   &-message {
     color: white;
-    height: 80px;
-    margin-bottom: 40px;
+    height: map-get($pixcel, "80");
+    margin-bottom: map-get($pixcel, "40");
 
     .direction {
       &-position {
@@ -51,23 +60,24 @@ $light: white;
 
   &-field {
     display: flex;
-    width: 310px;
+    width: map-get($pixcel, "310");
     flex-flow: wrap;
 
     .button {
-      height: 310px;
-      width: 100%;
+      height: map-get($pixcel, "310");
+      width: map-get($pixcel, "100%");
 
       button {
-        height: 100px;
-        width: 100px;
+        height: map-get($pixcel, "100");
+        width: map-get($pixcel, "100");
         cursor: pointer;
         border: 1px solid;
-        font-size: 90px;
+        font-size: map-get($pixcel, "100");
         border-color: black;
         background-color: #FFFFFF;
         box-shadow: 10px 10px 10px #888888;
         margin: 1px 1px;
+        padding-bottom: map-get($pixcel, "5");
 
         &:hover {
           background-color: #999999;
@@ -85,14 +95,14 @@ $light: white;
     }
 
     &-control {
-      margin-top: 40px;
+      margin-top: map-get($pixcel, "40");
       display: flex;
       justify-content: center;
-      width: 100%;
+      width: map-get($pixcel, "100%");
 
       button {
-        width: 100px;
-        height: 40px;
+        width: map-get($pixcel, "100");
+        height: map-get($pixcel, "40");
 
         &:hover {
           cursor: pointer;
@@ -102,7 +112,7 @@ $light: white;
   }
 
   &-result {
-    width: 300px;
+    width: map-get($pixcel, "300");
     display: flex;
     flex-direction: column;
     margin-top: 30px;
@@ -117,7 +127,7 @@ $light: white;
       display: flex;
       flex-direction: row;
       justify-content: space-around;
-      width: 300px;
+      width: map-get($pixcel, "300");
       margin-top: 10px;
 
       .player {
@@ -127,7 +137,7 @@ $light: white;
 
         &-score {
           align-self: center;
-          margin-top: 5px;
+          margin-top: map-get($pixcel, "5");
           font-size: map-get($FontSize, "normal");
         }
       }

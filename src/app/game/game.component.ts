@@ -41,7 +41,7 @@ export class GameComponent implements OnInit {
 
   ngOnInit() {
     for (let i = 0; i < 9; i++) {
-      this.buttonList.push({ numberButton: i, isDisable: true, player: i.toString() });
+      this.buttonList.push({ numberButton: i, isDisable: true, player: '' });
     }
   }
 
