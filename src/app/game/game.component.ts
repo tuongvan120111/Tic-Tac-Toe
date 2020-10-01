@@ -10,11 +10,10 @@ interface Field { numberButton: number, isDisable: boolean, player: string };
   styleUrls: ['./game.component.scss']
 })
 export class GameComponent implements OnInit {
-  score: string = TIC_TAC_TOE.RESULT.SCORE;;
+  readonly TIC_TAC_TOE = TIC_TAC_TOE;
   player1: string = TIC_TAC_TOE.RESULT.PLAYER_1;
   player2: string = TIC_TAC_TOE.RESULT.PLAYER_2;
-  startButton: string = TIC_TAC_TOE.GAME_FIELD.START_BUTTON;
-  resetButton: string = TIC_TAC_TOE.GAME_FIELD.RESET_BUTTON;
+  currentTurn = TIC_TAC_TOE.RESULT.PLAYER_1;
   score1: number = 0;
   score2: number = 0;
   buttonList: Field[] = [];
@@ -24,7 +23,6 @@ export class GameComponent implements OnInit {
   playerWon: string;
   isEndStep = false;
   isMessageShow = false;
-  currentTurn = TIC_TAC_TOE.RESULT.PLAYER_1;
 
   WINNING_COMBINATIONS = [
     [0, 1, 2],
