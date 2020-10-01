@@ -73,6 +73,9 @@ export class GameComponent implements OnInit {
 
         if (currentStep === 9) {
           this.isEndStep = true;
+          this.buttonList.forEach((button: Field) => {
+            button.isDisable = true;
+          });
         }
       }
 

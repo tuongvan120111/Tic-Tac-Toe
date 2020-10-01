@@ -90,6 +90,7 @@ $light: white;
 
         &:disabled {
           background-color: #BBBBBB;
+          cursor: unset;
         }
       }
     }
